@@ -1,0 +1,53 @@
+
+<!-- simple monolithic counter app to keep fresh/warm-up -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Counter</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+        .counter {
+            font-size: 2rem;
+            margin: 1rem;
+        }
+
+        button {
+            font-size: 1rem;
+            padding: 0.5rem 1rem;
+            margin: 0.5rem;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Simple Counter App</h1>
+    <div class="counter">0</div>
+    <button id="increment">Increment</button>
+    <button id="decrement">Decrement</button>
+
+    <script>
+        const counter = document.querySelector(".counter");
+        const incrementBtn = document.getElementById("increment");
+        const decrementBtn = document.getElementById("decrement");
+
+        incrementBtn.addEventListener("click", () => {
+            const currentValue = parseInt(counter.textContent);
+            counter.textContent = currentValue + 1;
+        });
+
+        decrementBtn.addEventListener("click", () => {
+            const currentValue = parseInt(counter.textContent);
+            if (currentValue > 0) {
+                counter.textContent = currentValue - 1;
+            }
+        });
+    </script>
+</body>
+</html>
